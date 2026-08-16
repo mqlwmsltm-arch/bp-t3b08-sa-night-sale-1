@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b08-sa-night-sale-1</title>
+  <meta name="description" content="t3b08-sa-night-sale-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sangam-song-info.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+ background-color: #faf8f5;
+ color: #2d2a26;
+ line-height: 1.6;
+ }
+
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Sticky Nav */
+ nav {
+ position: sticky;
+ top: 0;
+ background: #faf8f5;
+ border-bottom: 1px solid #2d2a26;
+ padding: 16px 0;
+ z-index: 100;
+ }
+
+ .nav-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ font-weight: 600;
+ font-size: 1.3rem;
+ letter-spacing: -0.3px;
+ color: #2d2a26;
+ text-decoration: none;
+ }
+
+ .nav-links {
+ display: flex;
+ gap: 24px;
+ list-style: none;
+ }
+
+ .nav-links a {
+ text-decoration: none;
+ color: #2d2a26;
+ font-size: 0.95rem;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.2s;
+ }
+
+ .nav-links a:hover {
+ border-bottom-color: #e07a5f;
+ }
+
+ .hamburger {
+ display: none;
+ background: none;
+ border: 1px solid #2d2a26;
+ padding: 8px 12px;
+ cursor: pointer;
+ font-size: 1.2rem;
+ color: #2d2a26;
+ transition: background 0.2s;
+ }
+
+ .hamburger:hover {
+ background: #e07a5f;
+ color: #faf8f5;
+ border-color: #e07a5f;
+ }
+
+ /* Mobile menu */
+ .mobile-menu {
+ display: none;
+ flex-direction: column;
+ gap: 12px;
+ padding: 16px 0;
+ border-top: 1px solid #2d2a26;
+ margin-top: 12px;
+ }
+
+ .mobile-menu a {
+ text-decoration: none;
+ color: #2d2a26;
+ font-size: 1rem;
+ padding: 8px 0;
+ border-bottom: 1px solid #ddd;
+ }
+
+ .mobile-menu.show {
+ display: flex;
+ }
+
+ /* Sections */
+ section {
+ padding: 40px 0;
+ border-bottom: 1px solid #2d2a26;
+ }
+
+ section:last-of-type {
+ border-bottom: none;
+ }
+
+ h1, h2, h3 {
+ font-weight: 600;
+ letter-spacing: -0.5px;
+ line-height: 1.2;
+ }
+
+ h1 {
+ font-size: 2.8rem;
+ margin-bottom: 16px;
+ }
+
+ h2 {
+ font-size: 2rem;
+ margin-bottom: 24px;
+ border-bottom: 1px solid #2d2a26;
+ padding-bottom: 12px;
+ }
+
+ h3 {
+ font-size: 1.3rem;
+ margin-bottom: 8px;
+ }
+
+ .hero {
+ padding: 60px 0 40px;
+ border-bottom: 1px solid #2d2a26;
+ }
+
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+ align-items: center;
+ }
+
+ .hero-visual {
+ width: 100%;
+ height: 280px;
+ background: #e07a5f;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 4rem;
+ border: 1px solid #2d2a26;
+ color: #faf8f5;
+ }
+
+ .hero p {
+ font-size: 1.1rem;
+ margin-bottom: 24px;
+ }
+
+ .btn {
+ display: inline-block;
+ background: #2d2a26;
+ color: #faf8f5;
+ padding: 12px 28px;
+ text-decoration: none;
+ border: 1px solid #2d2a26;
+ font-weight: 500;
+ transition: all 0.2s;
+ }
+
+ .btn:hover {
+ background: #e07a5f;
+ border-color: #e07a5f;
+ }
+
+ /* Card Grid */
+ .card-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+
+ .card {
+ border: 1px solid #2d2a26;
+ padding: 24px;
+ background: #faf8f5;
+ transition: transform 0.2s, box-shadow 0.2s;
+ }
+
+ .card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 4px 0 #2d2a26;
+ }
+
+ .card-icon {
+ font-size: 2rem;
+ margin-bottom: 12px;
+ }
+
+ .card p {
+ font-size: 0.95rem;
+ }
+
+ /* Review Cards */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ }
+
+ .review-card {
+ border: 1px solid #2d2a26;
+ padding: 20px;
+ background: #faf8f5;
+ }
+
+ .review-meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 12px;
+ font-size: 0.85rem;
+ }
+
+ .review-name {
+ font-weight: 600;
+ }
+
+ .review-date {
+ color: #666;
+ }
+
+ .stars {
+ color: #e07a5f;
+ letter-spacing: 2px;
+ margin-bottom: 8px;
+ }
+
+ .review-text {
+ font-size: 0.95rem;
+ line-height: 1.5;
+ }
+
+ /* Footer */
+ footer {
+ padding: 40px 0;
+ border-top: 1px solid #2d2a26;
+ text-align: center;
+ font-size: 0.9rem;
+ color: #555;
+ }
+
+ footer a {
+ color: #2d2a26;
+ text-decoration: underline;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
+ }
+ .hamburger {
+ display: block;
+ }
+
+ .hero-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .hero-visual {
+ height: 200px;
+ }
+
+ h1 {
+ font-size: 2rem;
+ }
+
+ .card-grid, .review-grid {
+ grid-template-columns: 1fr;
+ gap: 16px;
+ }
+
+ .review-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b08-sa-night-sale-1">
+  <meta property="og:description" content="t3b08-sa-night-sale-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sangam-song-info.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <nav>
+ <div class="container nav-inner">
+ <a href="#" class="logo">🍻 상암할인</a>
+ <ul class="nav-links">
+ <li><a href="#about">소개</a></li>
+ <li><a href="#spots">핫플</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ <li><a href="#contact">문의</a></li>
+ </ul>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="toggleMenu()">☰</button>
+ </div>
+ <div class="container mobile-menu" id="mobileMenu">
+ <a href="#about" onclick="toggleMenu()">소개</a>
+ <a href="#spots" onclick="toggleMenu()">핫플</a>
+ <a href="#reviews" onclick="toggleMenu()">리뷰</a>
+ <a href="#contact" onclick="toggleMenu()">문의</a>
+ </div>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 40개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0389.html">상암 유흥 할인 이용 전 반드시 확인해야 할 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">상암 유흥 할인 정보를 찾고 있다면 마포 지역 내의 다양한 가라오케 정보를 체계적으로 정리해야 합니다. 단체 모임을 계획할 때는 사전에 예약 가능 여부와 서비스 범위를 명확히 파악하는 것이 필요합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0390.html">상암 유흥 할인 활용과 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 비교 분석</a>
+        <p class="post-item__summary">상암 유흥 할인 정보를 찾는 사용자들처럼 온라인 콘텐츠 소비 속도는 매우 중요한 요소입니다. 콘텐츠가 얼마나 빠르게 검색 엔진에 노출되는지는 서버의 대역폭과 기술적인 최적화 상태에 달려 있습니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0391.html">상암 유흥 할인 혜택 확인과 구글 신뢰 지수 모발이식 솔루션의 상관관계</a>
+        <p class="post-item__summary">상암 유흥 할인 정보를 찾다가 무작정 방문하는 방식은 실패할 확률이 높습니다. 많은 이용자가 사전에 예약 절차를 생략하고 현장에서 정보를 얻으려 하지만, 이는 오히려 시간과 자원을 낭비하는 주된 원</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0254.html">상암 유흥 할인 확인하며 비교하는 망원 노래방 추천정보 비교</a>
+        <p class="post-item__summary">상암 유흥 할인 정보가 주는 경제적 이점을 고려할 때 망원 지역의 즐길 거리 역시 꼼꼼히 따져보는 태도가 필요합니다. 특히 노래방 선택에 있어서는 매장마다 내세우는 서비스의 범위와 가격 책정 방식이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0255.html">상암 유흥 할인 정보로 확인하는 홍대 노래방 추천정보 예약</a>
+        <p class="post-item__summary">상암 유흥 할인 혜택을 찾다 보면 홍대 주변의 활기찬 문화에 자연스럽게 눈길이 갑니다. 많은 사람이 노래방을 찾지만, 사전에 정보를 제대로 확인하지 않아 불만족스러운 경험을 하는 사례가 많습니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0256.html">상암 유흥 할인 활용법과 공덕 셔츠룸 추천정보 체크리스트</a>
+        <p class="post-item__summary">상암 유흥 할인 정보를 접하고 공덕 지역의 다양한 유흥 문화에 관심을 가지는 분들이 늘고 있습니다. 특히 셔츠룸과 같은 특수 업종을 방문할 때는 보안과 프라이버시, 그리고 접근성을 고루 살피는 것이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0257.html">상암 유흥 할인 혜택 확인하고 연남 유흥 추천정보로 즐기는 법</a>
+        <p class="post-item__summary">오랜만에 모인 지인들과 연남동 골목을 거닐다 보면 마땅한 장소를 찾기 위해 고군분투하는 상황을 종종 목격하게 됩니다. 특히 상암 유흥 할인 정보를 미리 찾아두었다고 생각하고 방문했음에도 실제 적용 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0258.html">상암 유흥 할인 정보보다 중요한 마곡 가라오케 추천정보 활용 팁</a>
+        <p class="post-item__summary">가라오케는 무조건 밤늦은 시간에 방문해야 즐겁다는 편견은 이제 접어두는 것이 좋습니다. 많은 분이 상암 유흥 할인 혜택을 찾아 밤늦게 업소를 찾지만, 사실 이른 저녁 시간대가 서비스의 질이나 여유로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0259.html">상암 유흥 할인 찾아 헤매지 말고 마곡 유흥 추천정보로 완벽하게</a>
+        <p class="post-item__summary">성공적인 유흥 모임을 위해서는 적절한 인원 구성, 사전에 합의된 예산 규모, 그리고 검증된 장소 선정이라는 세 가지 조건이 반드시 충족되어야 합니다. 무작정 상암 유흥 할인 정보만을 찾으며 시간을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0260.html">상암 유흥 할인 챙기는 것보다 중요한 합정 노래방 추천정보 비교</a>
+        <p class="post-item__summary">여러분은 노래방을 선택할 때 무엇을 가장 우선순위에 두시나요. 단순히 상암 유흥 할인 정보를 찾으며 가격적인 측면만 비교하고 있지는 않은지 스스로 되돌아볼 필요가 있습니다. 시설의 청결도, 음향 장</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0261.html">상암 유흥 할인 혜택 확인하며 살펴보는 연남 클럽 추천정보 이용 가이드</a>
+        <p class="post-item__summary">주말 밤 연남 지역을 찾는 이들은 화려한 조명과 음악이 가득한 클럽 문화를 즐기기 위해 분주히 움직입니다. 상암 유흥 할인 혜택과 같은 정보를 미리 파악해두면 실질적인 비용 절감은 물론 더욱 여유로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0262.html">상암 유흥 할인 방법과 비교해보는 합정 셔츠룸 추천정보 선택 기준</a>
+        <p class="post-item__summary">합정 인근에서 유흥을 즐기고자 할 때 가장 먼저 마주하는 고민은 과연 어디를 선택해야 합리적인지 판단하는 일입니다. 상암 유흥 할인 소식을 들었을 때와 마찬가지로 합정 지역 역시 이용 전 정확한 가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0263.html">상암 유흥 할인 노하우와 접목한 공덕 가라오케 추천정보 예약 매뉴얼</a>
+        <p class="post-item__summary">공덕 지역은 직장인들이 모여드는 중심지답게 다양한 가라오케가 운영 중입니다. 상암 유흥 할인 정보를 접하며 기대감을 품고 접근하지만 정작 예약 단계에서 실수하여 낭패를 보는 경우가 생각보다 많습니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0264.html">상암 유흥 할인 혜택과 상수 마사지 추천정보 활용한 건강 관리 체크리스트</a>
+        <p class="post-item__summary">피로가 쌓인 저녁 시간, 상수 지역을 방문하는 이들이 마사지 서비스를 찾곤 합니다. 상암 유흥 할인 혜택을 찾아다니던 감각으로 지역 내 마사지 정보를 분류하면 훨씬 효율적인 휴식을 취할 수 있습니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">상암 유흥 할인 정보 안내</a>
+        <p class="post-item__summary">상암 지역에서는 다양한 유흥 시설들이 밀집해 있으며, 특히 할인 정보를 찾는 분들이 꾸준히 있습니다. 지역 상권 특성상 일부 업소에서는 기간 한정 또는 시즌별 할인 행사가 진행되기도 하며, 이를 사</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">상암 유흥 할인 정보 안내</a>
+        <p class="post-item__summary">상암 지역에서 유흥 관련 서비스를 이용할 때 비용 절감 기회를 고려하는 분들이 많습니다. 각 업소나 프로그램에 따라 다양한 할인 혜택이 적용될 수 있으며, 이는 사전에 충분히 파악하는 것이 필요합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-1u7l9w1.html">상암 유흥 할인, 진짜로 쌀까? 사장 몰래 계산기 켜본 날</a>
+        <p class="post-item__summary">korean bar interior, neon sign, dark room, leather couch, night view window, 1.2:sangam nightlife, 1.3:bar int</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">상암 유흥 할인 카드 혜택 정보</a>
+        <p class="post-item__summary">상암 지역에서 유흥 관련 할인 정보를 검색하는 경우, 대부분의 비용 절감은 금융 결제 수단인 신용카드나 체크카드의 연계 혜택에서 비롯됩니다. 특정 업소 자체의 할인율보다는 해당 업종이 속하는 카드사</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">상암 유흥 할인 예산 가이드</a>
+        <p class="post-item__summary">상암 지역 유흥가를 이용할 때 예산을 효율적으로 관리하는 것은 즐거운 경험을 위해 매우 중요합니다. 할인 정보를 정확히 파악하면 불필요한 지출을 줄이고, 원하는 분위기와 서비스를 더 저렴하게 즐길 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">상암 유흥 할인 정보 안내</a>
+        <p class="post-item__summary">서울 상암 지역에서 유흥 관련 소비를 계획하고 계신 분들에게는 합리적인 가격 정보를 확인하는 것이 매우 중요합니다. 다양한 할인가나 특별 혜택은 예산 관리에 도움을 주며, 사전에 정보를 숙지함으로써</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
